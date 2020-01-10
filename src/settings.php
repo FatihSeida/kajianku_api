@@ -20,7 +20,7 @@ return [
         'db' => [
             'host' => 'localhost',
             'user' => 'root',
-            'pass' => 'kajianku',
+            'pass' => '',
             'dbname' => 'kajianku',
             'driver' => 'mysql'
         ]

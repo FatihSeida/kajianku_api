@@ -2,7 +2,7 @@
 
 use Slim\App;
 
-$app->add(function ($request, $response, $next) {
+/* $app->add(function ($request, $response, $next) {
     
     $key = $request->getQueryParam("key");
 
@@ -30,3 +30,5 @@ $app->add(function ($request, $response, $next) {
     return $response->withJson(["status" => "Unauthorized"], 401);
 
 });
+
+*/

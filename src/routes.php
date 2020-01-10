@@ -46,7 +46,7 @@ return function (App $app) {
 
         $login = $request->getParsedBody();
 
-        $sql = "SELECT nama,alamat,no_hp,email, api_key FROM users WHERE email=:email AND password=:password";
+        $sql = "SELECT email, password FROM users WHERE email=:email AND password=:password";
         $stmt = $this->db->prepare($sql);
 
         $data = [
@@ -68,7 +68,7 @@ return function (App $app) {
     $app->post("/register/", function (Request $request, Response $response){
         $register = $request->getParsedBody();
 
-        $sql = "INSERT INTO users(nama, alamat, no_hp, email, password, api_key, hit) VALUES (:nama,:alamat, :no_hp,:email,:password, :api_key, :hit)";
+        $sql = "INSERT INTO users(nama, alamat, no_hp, email, password) VALUES (:nama,:alamat, :no_hp,:email,:password)";
         $stmt = $this->db->prepare($sql);
 
         $data = [
@@ -77,8 +77,6 @@ return function (App $app) {
             ":no_hp" => $register["no_hp"],
             ":email" => $register["email"],
             ":password" => $register["password"],
-            ":api_key" => $register["api_key"],
-            ":hit" => $register["hit"]
         ];
 
 
